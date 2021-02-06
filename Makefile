@@ -11,7 +11,7 @@ build/${PI_EEPROM_VERSION}.bin:
 
 
 build/bootconf.txt: build/${PI_EEPROM_VERSION}.bin
-	sudo rpi-eeprom-config ${PI_EEPROM_VERSION}.bin > $@
+	sudo rpi-eeprom-config $< > $@
 	sed -i 's/BOOT_ORDER=.*/BOOT_ORDER=0xf241/g' $@
 
 
